@@ -1,0 +1,121 @@
+[
+  {
+    "id": 101,
+    "name": "Lusso Cloud Sofa",
+    "category": "Living Room",
+    "price": 1299.00,
+    "description": "A deep, plush sofa designed for ultimate relaxation. Upholstered in premium sustainable fabric.",
+    "image": "images/sofa-cloud.jpg",
+    "colors": ["Charcoal", "Cream", "Navy"],
+    "material": "Fabric",
+    "dimensions": {
+      "width_cm": 240,
+      "height_cm": 85,
+      "depth_cm": 100
+    },
+    "stock": 5,
+    "isNewArrival": true
+  },
+  {
+    "id": 102,
+    "name": "Eames Style Lounge Chair",
+    "category": "Living Room",
+    "price": 850.00,
+    "description": "An iconic mid-century modern design combining molded plywood and leather.",
+    "image": "images/chair-lounge.jpg",
+    "colors": ["Walnut/Black", "Ash/White"],
+    "material": "Leather",
+    "dimensions": {
+      "width_cm": 85,
+      "height_cm": 80,
+      "depth_cm": 85
+    },
+    "stock": 2,
+    "isNewArrival": false
+  },
+  {
+    "id": 201,
+    "name": "Nordic Oak Bed Frame",
+    "category": "Bedroom",
+    "price": 599.00,
+    "description": "Minimalist solid oak bed frame with a low profile and sturdy slats.",
+    "image": "images/bed-oak.jpg",
+    "colors": ["Natural Oak", "Dark Walnut"],
+    "material": "Wood",
+    "dimensions": {
+      "width_cm": 160,
+      "height_cm": 35,
+      "depth_cm": 210
+    },
+    "stock": 8,
+    "isNewArrival": false
+  },
+  {
+    "id": 202,
+    "name": "Minimalist Nightstand",
+    "category": "Bedroom",
+    "price": 149.00,
+    "description": "Compact bedside table with a single drawer and matte metal legs.",
+    "image": "images/nightstand-white.jpg",
+    "colors": ["White", "Black"],
+    "material": "Metal",
+    "dimensions": {
+      "width_cm": 45,
+      "height_cm": 50,
+      "depth_cm": 40
+    },
+    "stock": 15,
+    "isNewArrival": true
+  },
+  {
+    "id": 301,
+    "name": "Marble Top Dining Table",
+    "category": "Dining",
+    "price": 899.00,
+    "description": "Genuine Carrara marble top supported by a geometric metal base.",
+    "image": "images/table-marble.jpg",
+    "colors": ["White/Gold", "White/Black"],
+    "material": "Stone",
+    "dimensions": {
+      "width_cm": 180,
+      "height_cm": 75,
+      "depth_cm": 90
+    },
+    "stock": 1,
+    "isNewArrival": false
+  },
+  {
+    "id": 302,
+    "name": "Velvet Dining Chair",
+    "category": "Dining",
+    "price": 120.00,
+    "description": "Soft velvet upholstery with ergonomic back support.",
+    "image": "images/chair-velvet.jpg",
+    "colors": ["Emerald Green", "Blush Pink", "Grey"],
+    "material": "Velvet",
+    "dimensions": {
+      "width_cm": 50,
+      "height_cm": 85,
+      "depth_cm": 55
+    },
+    "stock": 20,
+    "isNewArrival": true
+  },
+  {
+    "id": 401,
+    "name": "Arco Floor Lamp",
+    "category": "Lighting",
+    "price": 299.00,
+    "description": "A sweeping arch lamp with a marble base, perfect for overhead lighting without wiring.",
+    "image": "images/lamp-arco.jpg",
+    "colors": ["Silver", "Brass"],
+    "material": "Metal",
+    "dimensions": {
+      "width_cm": 30,
+      "height_cm": 220,
+      "depth_cm": 180
+    },
+    "stock": 4,
+    "isNewArrival": false
+  }
+]
