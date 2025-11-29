@@ -5,7 +5,7 @@
     "category": "Living Room",
     "price": 1299.00,
     "description": "A deep, plush sofa designed for ultimate relaxation. Upholstered in premium sustainable fabric.",
-    "image": "images/sofa-cloud.jpg",
+    "image": "resources/img/lusso-sofa.jpg",
     "colors": ["Charcoal", "Cream", "Navy"],
     "material": "Fabric",
     "dimensions": {
@@ -22,7 +22,7 @@
     "category": "Living Room",
     "price": 850.00,
     "description": "An iconic mid-century modern design combining molded plywood and leather.",
-    "image": "images/chair-lounge.jpg",
+    "image": "resources/img/eames-chair.jpg",
     "colors": ["Walnut/Black", "Ash/White"],
     "material": "Leather",
     "dimensions": {
@@ -39,7 +39,7 @@
     "category": "Bedroom",
     "price": 599.00,
     "description": "Minimalist solid oak bed frame with a low profile and sturdy slats.",
-    "image": "images/bed-oak.jpg",
+    "image": "resources/img/nordic-bed.jpg",
     "colors": ["Natural Oak", "Dark Walnut"],
     "material": "Wood",
     "dimensions": {
@@ -56,7 +56,7 @@
     "category": "Bedroom",
     "price": 149.00,
     "description": "Compact bedside table with a single drawer and matte metal legs.",
-    "image": "images/nightstand-white.jpg",
+    "image": "resources/img/nightstand.jpg",
     "colors": ["White", "Black"],
     "material": "Metal",
     "dimensions": {
@@ -73,7 +73,7 @@
     "category": "Dining",
     "price": 899.00,
     "description": "Genuine Carrara marble top supported by a geometric metal base.",
-    "image": "images/table-marble.jpg",
+    "image": "resources/img/marble-table.jpg",
     "colors": ["White/Gold", "White/Black"],
     "material": "Stone",
     "dimensions": {
@@ -90,7 +90,7 @@
     "category": "Dining",
     "price": 120.00,
     "description": "Soft velvet upholstery with ergonomic back support.",
-    "image": "images/chair-velvet.jpg",
+    "image": "resources/img/velvet-chair.jpg",
     "colors": ["Emerald Green", "Blush Pink", "Grey"],
     "material": "Velvet",
     "dimensions": {
@@ -107,7 +107,7 @@
     "category": "Lighting",
     "price": 299.00,
     "description": "A sweeping arch lamp with a marble base, perfect for overhead lighting without wiring.",
-    "image": "images/lamp-arco.jpg",
+    "image": "resources/img/arco-lamp.jpg",
     "colors": ["Silver", "Brass"],
     "material": "Metal",
     "dimensions": {
