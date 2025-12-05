@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="resources/images/logo_b_t.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles/prdcts.css" />
+  </head>
+
+  <body class="products_page">
+    <header class="home_header">
+      <nav class="nav_home">
+        <div class="home_navbar_container">
+          <!-- logo section -->
+          <div class="logo">
+            <a href="/index.html">
+              <img src="resources/img/home_images/logo_t.png" alt="Lume logo" />
+            </a>
+          </div>
+
+          <!-- center white menu tab -->
+          <div class="nav_menu_tab">
+            <ul class="navbar_home_menu">
+              <li class="navbar_home_item">
+                <a href="/" class="navbar_links">Home</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/prdcts.html" class="navbar_links">Product</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/NewCollection.html" class="navbar_links">Services</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/aboutus.html" class="navbar_links">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- icons section -->
+          <div class="home_icons_container" aria-hidden="false">
+            <button class="icon-btn" aria-label="wishlist">
+              <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            </button>
+            <button class="icon-btn cart-icon-btn" aria-label="cart">
+              <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-counter hidden" id="cart-counter">0</span>
+              </a>
+            </button>
+            <button class="icon-btn" aria-label="account">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </div>
+
+          <!-- hamburger (mobile) -->
+          <button
+            class="navbar_toggle"
+            id="mobile-menu"
+            aria-label="toggle menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="container shop-layout">
+      <aside class="filter-sidebar">
+        <h3 class="sidebar-title">Filter</h3>
+
+        <div class="filter-group">
+          <h4>By Categories</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="category-filter"
+              value="Living Room"
+            />
+            Living Room</label
+          >
+          <label
+            ><input type="checkbox" class="category-filter" value="Bedroom" />
+            Bedroom</label
+          >
+          <label
+            ><input type="checkbox" class="category-filter" value="Dining" />
+            Dining</label
+          >
+          <label
+            ><input type="checkbox" class="category-filter" value="Lighting" />
+            Lighting</label
+          >
+        </div>
+
+        <div class="filter-group">
+          <h4>Price</h4>
+          <input
+            type="range"
+            min="100"
+            max="1500"
+            value="1500"
+            id="priceFilter"
+          />
+          <p>Max Price: $<span id="priceValue">1500</span></p>
+        </div>
+      </aside>
+
+      <section class="product-grid">
+        <div
+          class="product-card"
+          data-category="Living Room"
+          data-price="1299"
+          data-id="101"
+        >
+          <div class="product-img">
+            <div class="wishlist-btn">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <img src="resources/img/lusso-sofa.jpg" alt="" />
+          </div>
+          <p class="product-title">Lusso Cloud Sofa</p>
+          <p class="product-price">$1299.00</p>
+        </div>
+
+        <div
+          class="product-card"
+          data-category="Living Room"
+          data-price="850"
+          data-id="102"
+        >
+          <div class="product-img">
+            <div class="wishlist-btn">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <img src="resources/img/eames-chair.jpg" alt="" />
+          </div>
+          <p class="product-title">Eames Style Lounge Chair</p>
+          <p class="product-price">$850.00</p>
+        </div>
+
+        <div
+          class="product-card"
+          data-category="Bedroom"
+          data-price="599"
+          data-id="201"
+        >
+          <div class="product-img">
+            <div class="wishlist-btn">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <img src="resources/img/nordic-bed.jpg" alt="" />
+          </div>
+          <p class="product-title">Nordic Oak Bed Frame</p>
+          <p class="product-price">$599.00</p>
+        </div>
+
+        <div
+          class="product-card"
+          data-category="Bedroom"
+          data-price="149"
+          data-id="202"
+        >
+          <div class="product-img">
+            <div class="wishlist-btn">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <img src="resources/img/nightstand.jpg" alt="" />
+          </div>
+          <p class="product-title">Minimalist Nightstand</p>
+          <p class="product-price">$149.00</p>
+        </div>
+
+        <div
+          class="product-card"
+          data-category="Dining"
+          data-price="899"
+          data-id="301"
+        >
+          <div class="product-img">
+            <div class="wishlist-btn">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <img src="resources/img/marble-table.jpg" alt="" />
+          </div>
+          <p class="product-title">Marble Top Dining Table</p>
+          <p class="product-price">$899.00</p>
+        </div>
+
+        <div
+          class="product-card"
+          data-category="Dining"
+          data-price="120"
+          data-id="302"
+        >
+          <div class="product-img">
+            <div class="wishlist-btn">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <img src="resources/img/velvet-chair.jpg" alt="" />
+          </div>
+          <p class="product-title">Velvet Dining Chair</p>
+          <p class="product-price">$120.00</p>
+        </div>
+
+        <div
+          class="product-card"
+          data-category="Lighting"
+          data-price="299"
+          data-id="401"
+        >
+          <div class="product-img">
+            <div class="wishlist-btn">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <img src="resources/img/arco-lamp.jpg" alt="" />
+          </div>
+          <p class="product-title">Arco Floor Lamp</p>
+          <p class="product-price">$299.00</p>
+        </div>
+      </section>
+    </div>
+    <!--footer-->
+
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_column">
+          <h3>Service</h3>
+          <a href="#">Legal Notice</a>
+          <a href="#">Data Protection</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Newsletter</h3>
+          <a href="#">Email</a>
+          <a href="#">Subscribe</a>
+        </div>
+
+        <div class="footer_logo">
+          <img src="resources/img/home_images/logo_t.png" alt="Lume Logo" />
+        </div>
+
+        <div class="footer_column">
+          <h3>Connect</h3>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Contact</h3>
+          <p>12 B Street, Eastern<br />Alberta</p>
+          <a href="mailto:Global@Modulive.com">Global@Modulive.com</a>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <p>© Copyright 2024. Modulive All Rights Reserved.</p>
+
+        <div class="footer_links">
+          <a href="#">Terms of service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="main.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/prdcts.js"></script>
+  </body>
+</html>

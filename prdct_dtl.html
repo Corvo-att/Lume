@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Lume</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles/prdct_dtl.css" />
+  </head>
+
+  <body class="product-detail-page">
+    <!-- Header -->
+    <header class="home_header">
+      <nav class="nav_home">
+        <div class="home_navbar_container">
+          <!-- logo section -->
+          <div class="logo">
+            <a href="/index.html">
+              <img src="resources/img/home_images/logo_t.png" alt="Lume logo" />
+            </a>
+          </div>
+
+          <!-- center white menu tab -->
+          <div class="nav_menu_tab">
+            <ul class="navbar_home_menu">
+              <li class="navbar_home_item">
+                <a href="/" class="navbar_links">Home</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/prdcts.html" class="navbar_links">Product</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/NewCollection.html" class="navbar_links">Services</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/aboutus.html" class="navbar_links">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- icons section -->
+          <div class="home_icons_container" aria-hidden="false">
+            <button class="icon-btn" aria-label="wishlist">
+              <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            </button>
+            <button class="icon-btn cart-icon-btn" aria-label="cart">
+              <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-counter hidden" id="cart-counter">0</span>
+              </a>
+            </button>
+            <button class="icon-btn" aria-label="account">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </div>
+
+          <!-- hamburger (mobile) -->
+          <button
+            class="navbar_toggle"
+            id="mobile-menu"
+            aria-label="toggle menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container product-wrapper">
+      <div class="product-image-col">
+        <img
+          src="resources/img/arco-lamp.jpg"
+          alt="Arco Floor Lamp"
+          id="product-img"
+          class="main-img"
+        />
+      </div>
+
+      <div class="product-info-col">
+        <div class="header-group">
+          <h1 id="product-name">Arco Floor Lamp</h1>
+          <div class="stock-status">
+            stock:
+            <span id="stock-count" class="highlight">4 Available In Stock</span>
+          </div>
+          <h3 class="category">
+            Category: <span id="product-category">Lighting</span>
+          </h3>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="price-group">
+          <h2 class="price" id="product-price">$299.00</h2>
+        </div>
+
+        <div class="payment-info">
+          <h4>Down payment Instructions:</h4>
+          <ul>
+            <li>First Payment: 25% Deposit.</li>
+            <li>Second Payment: 25% within 10 days.</li>
+            <li>Final Payment: 50% upon delivery.</li>
+          </ul>
+        </div>
+
+        <div class="action-group">
+          <div class="quantity-wrapper">
+            <label>Quantity</label>
+            <div class="qty-selector">
+              <button class="qty-btn" onclick="updateQty(-1)">−</button>
+              <span id="qtyValue">1</span>
+              <button class="qty-btn" onclick="updateQty(1)">+</button>
+            </div>
+          </div>
+
+          <button class="btn-primary btn-add-cart">ADD TO CART</button>
+        </div>
+
+        <button class="btn-secondary btn-buy-now">BUY <span>NOW</span></button>
+
+        <div class="accordion-section">
+          <div class="accordion" id="productAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#descCollapse"
+                >
+                  Description
+                </button>
+              </h2>
+              <div
+                id="descCollapse"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#productAccordion"
+              >
+                <div class="accordion-body" id="product-desc">
+                  A sweeping arch lamp with a marble base, perfect for overhead
+                  lighting without wiring.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#dimsCollapse"
+                >
+                  Dimensions
+                </button>
+              </h2>
+              <div
+                id="dimsCollapse"
+                class="accordion-collapse collapse"
+                data-bs-parent="#productAccordion"
+              >
+                <div class="accordion-body" id="dims-content">
+                  <strong>Width:</strong> 180 cm<br />
+                  <strong>Height:</strong> 220 cm<br />
+                  <strong>Depth:</strong> 30 cm
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#materialCollapse"
+                >
+                  Material & Colors
+                </button>
+              </h2>
+              <div
+                id="materialCollapse"
+                class="accordion-collapse collapse"
+                data-bs-parent="#productAccordion"
+              >
+                <div class="accordion-body">
+                  <p>
+                    <strong>Material:</strong>
+                    <span id="material-info">Metal</span>
+                  </p>
+                  <p>
+                    <strong>Available Colors:</strong>
+                    <span id="colors-info">Silver, Brass</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- You May Also Like Section -->
+    <section class="recommendations-section">
+      <div class="recommendations-container">
+        <h2 class="recommendations-title">
+          <i class="fas fa-heart"></i>
+          You May Also Like
+        </h2>
+        <div class="recommendations-grid" id="recommendations-grid">
+          <!-- Products will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_column">
+          <h3>Service</h3>
+          <a href="#">Legal Notice</a>
+          <a href="#">Data Protection</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Newsletter</h3>
+          <a href="#">Email</a>
+          <a href="#">Subscribe</a>
+        </div>
+
+        <div class="footer_logo">
+          <img src="resources/img/home_images/logo_t.png" alt="Lume Logo" />
+        </div>
+
+        <div class="footer_column">
+          <h3>Connect</h3>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Contact</h3>
+          <p>12 B Street, Eastern<br />Alberta</p>
+          <a href="mailto:Global@Modulive.com">Global@Modulive.com</a>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <p>© Copyright 2024. Modulive All Rights Reserved.</p>
+
+        <div class="footer_links">
+          <a href="#">Terms of service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/product_detail.js"></script>
+  </body>
+</html>

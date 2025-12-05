@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wishlist</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles/prdcts.css" />
+  </head>
+  <body class="wishlist-page">
+    <!-- Header -->
+    <header class="home_header">
+      <nav class="nav_home">
+        <div class="home_navbar_container">
+          <!-- logo section -->
+          <div class="logo">
+            <a href="/index.html">
+              <img src="resources/img/home_images/logo_t.png" alt="Lume logo" />
+            </a>
+          </div>
+
+          <!-- center white menu tab -->
+          <div class="nav_menu_tab">
+            <ul class="navbar_home_menu">
+              <li class="navbar_home_item">
+                <a href="/" class="navbar_links">Home</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/prdcts.html" class="navbar_links">Product</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/NewCollection.html" class="navbar_links">Services</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/aboutus.html" class="navbar_links">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- icons section -->
+          <div class="home_icons_container" aria-hidden="false">
+            <button class="icon-btn" aria-label="wishlist">
+              <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            </button>
+            <button class="icon-btn cart-icon-btn" aria-label="cart">
+              <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-counter hidden" id="cart-counter">0</span>
+              </a>
+            </button>
+            <button class="icon-btn" aria-label="account">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </div>
+
+          <!-- hamburger (mobile) -->
+          <button
+            class="navbar_toggle"
+            id="mobile-menu"
+            aria-label="toggle menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="wishlist-container">
+      <div class="wishlist-header">
+        <div class="wishlist-title-section">
+          <i class="fa-solid fa-heart wishlist-icon"></i>
+          <h1 class="wishlist-title">My Wishlist</h1>
+          <span class="wishlist-count" id="wishlistCount">0 items</span>
+        </div>
+        <button id="clearWishlistBtn" class="clear-wishlist">
+          <i class="fa-solid fa-trash-can"></i>
+          Clear All
+        </button>
+      </div>
+
+      <div class="wishlist-content">
+        <div class="empty-wishlist" id="emptyState" style="display: none">
+          <i class="fa-regular fa-heart empty-icon"></i>
+          <h2>Your Wishlist is Empty</h2>
+          <p>Start adding items you love to keep them saved for later!</p>
+          <a href="/prdcts.html" class="btn-browse">
+            <i class="fa-solid fa-arrow-left"></i>
+            Browse Products
+          </a>
+        </div>
+
+        <div class="wishlist-grid" id="wishlistGrid"></div>
+      </div>
+    </div>
+
+    <script>
+      const wishlistGrid = document.getElementById("wishlistGrid");
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+      function renderWishlist() {
+        wishlistGrid.innerHTML = "";
+        const emptyState = document.getElementById("emptyState");
+        const countElement = document.getElementById("wishlistCount");
+        const clearBtn = document.getElementById("clearWishlistBtn");
+
+        // Update count
+        countElement.textContent = `${wishlist.length} ${
+          wishlist.length === 1 ? "item" : "items"
+        }`;
+
+        if (wishlist.length === 0) {
+          emptyState.style.display = "flex";
+          wishlistGrid.style.display = "none";
+          clearBtn.style.display = "none";
+          return;
+        }
+
+        emptyState.style.display = "none";
+        wishlistGrid.style.display = "grid";
+        clearBtn.style.display = "flex";
+
+        wishlist.forEach((product, index) => {
+          const card = document.createElement("div");
+          card.classList.add("product-card");
+          card.style.animationDelay = `${index * 0.1}s`;
+
+          card.innerHTML = `
+            <div class="wishlist-card-header">
+              <span class="item-number">#${index + 1}</span>
+              <button class="remove-btn-icon" data-index="${index}" title="Remove from wishlist">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div class="product-img">
+                <img src="${product.img}" alt="${product.title}" loading="lazy">
+                <div class="img-overlay">
+                  <button class="btn-view" onclick="window.location.href='/prdct_dtl.html'">
+                    <i class="fa-solid fa-eye"></i> View Details
+                  </button>
+                </div>
+            </div>
+            <div class="product-info">
+              <p class="product-title">${product.title}</p>
+              <p class="product-price">${product.price}</p>
+              <button class="btn-add-to-cart" data-index="${index}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add to Cart
+              </button>
+            </div>
+        `;
+
+          wishlistGrid.appendChild(card);
+        });
+
+        // Remove button listeners
+        document.querySelectorAll(".remove-btn-icon").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const index = btn.dataset.index;
+            const card = btn.closest(".product-card");
+            card.classList.add("removing");
+
+            setTimeout(() => {
+              wishlist.splice(index, 1);
+              localStorage.setItem("wishlist", JSON.stringify(wishlist));
+              renderWishlist();
+            }, 300);
+          });
+        });
+
+        // Add to cart button listeners
+        document.querySelectorAll(".btn-add-to-cart").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const index = parseInt(btn.dataset.index);
+            const item = wishlist[index];
+
+            // Create product object for cart
+            const cartProduct = {
+              id: Date.now() + index, // Generate unique ID based on title
+              name: item.title,
+              price: parseFloat(item.price.replace("$", "")),
+              image: item.img,
+              category: "Wishlist Item",
+              quantity: 1,
+            };
+
+            // Add to cart using global function
+            if (typeof window.addToCart === "function") {
+              window.addToCart(cartProduct);
+
+              // Visual feedback
+              btn.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
+              btn.disabled = true;
+              setTimeout(() => {
+                btn.innerHTML =
+                  '<i class="fa-solid fa-cart-shopping"></i> Add to Cart';
+                btn.disabled = false;
+              }, 2000);
+            }
+          });
+        });
+      }
+
+      renderWishlist();
+
+      document
+        .getElementById("clearWishlistBtn")
+        .addEventListener("click", () => {
+          if (
+            confirm(
+              `Are you sure you want to remove all ${wishlist.length} items from your wishlist?`
+            )
+          ) {
+            wishlistGrid.classList.add("fade-out");
+            setTimeout(() => {
+              localStorage.removeItem("wishlist");
+              wishlist = [];
+              renderWishlist();
+              wishlistGrid.classList.remove("fade-out");
+            }, 300);
+          }
+        });
+    </script>
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_column">
+          <h3>Service</h3>
+          <a href="#">Legal Notice</a>
+          <a href="#">Data Protection</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Newsletter</h3>
+          <a href="#">Email</a>
+          <a href="#">Subscribe</a>
+        </div>
+
+        <div class="footer_logo">
+          <img src="resources/img/home_images/logo_t.png" alt="Lume Logo" />
+        </div>
+
+        <div class="footer_column">
+          <h3>Connect</h3>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Contact</h3>
+          <p>12 B Street, Eastern<br />Alberta</p>
+          <a href="mailto:Global@Modulive.com">Global@Modulive.com</a>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <p>© Copyright 2024. Modulive All Rights Reserved.</p>
+
+        <div class="footer_links">
+          <a href="#">Terms of service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="scripts/cart.js"></script>
+  </body>
+</html>

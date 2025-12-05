@@ -1,108 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lume | Modern Home Décor</title>
 
+    <!-- Fonts & Icons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <link rel="stylesheet" href="main.css" />
-    <link rel="icon" type="image/png" href="resources/img/logo_b_t.png" />
+    <link rel="stylesheet" href="styles/home.css" />
   </head>
   <body>
-    <header class="navbar">
-      <div class="container nav-container">
-        <a href="index.html" class="logo">
-          <img src="resources/img/logo_t.png" alt="Lume Logo" />
-        </a>
+    <!-- Header -->
+    <header class="home_header">
+      <nav class="nav_home">
+        <div class="home_navbar_container">
+          <!-- logo section -->
+          <div class="logo">
+            <a href="/index.html">
+              <img src="resources/img/home_images/logo_t.png" alt="Lume logo" />
+            </a>
+          </div>
 
-        <div class="mobile-toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <!-- center white menu tab -->
+          <div class="nav_menu_tab">
+            <ul class="navbar_home_menu">
+              <li class="navbar_home_item">
+                <a href="/" class="navbar_links">Home</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/prdcts.html" class="navbar_links">Product</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/NewCollection.html" class="navbar_links">Services</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/aboutus.html" class="navbar_links">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- icons section -->
+          <div class="home_icons_container" aria-hidden="false">
+            <button class="icon-btn" aria-label="wishlist">
+              <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            </button>
+            <button class="icon-btn cart-icon-btn" aria-label="cart">
+              <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-counter hidden" id="cart-counter">0</span>
+              </a>
+            </button>
+            <button class="icon-btn" aria-label="account">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </div>
+
+          <!-- hamburger (mobile) -->
+          <button
+            class="navbar_toggle"
+            id="mobile-menu"
+            aria-label="toggle menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
-
-        <nav class="nav-menu">
-          <ul>
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="shop.html" class="nav-link">Shop</a></li>
-            <li><a href="inspiration.html" class="nav-link">Inspiration</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-          </ul>
-        </nav>
-
-        <div class="nav-icons">
-          <a href="login.html"><i class="fa-regular fa-user"></i></a>
-          <a href="cart.html" class="cart-icon">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-count">0</span>
-          </a>
-        </div>
-      </div>
+      </nav>
     </header>
 
-    <main style="min-height: 60vh; padding-top: 100px">
-      <div class="container"></div>
-    </main>
+    <!-- Hero section -->
+    <section class="Hero_section">
+      <div class="hero-inner">
+        <!-- hero content at bottom -->
+        <div class="hero-content">
+          <div class="text-area">
+            <h1>Best Furniture<br />For Your Home</h1>
+            <p>
+              Our practice is designing complete environments exceptional
+              buildings, communities and place in special situations, here a
+              unique history
+            </p>
+          </div>
+          <a href="prdcts.html" class="shop_button">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About us section -->
+    <section class="about_us_section">
+      <div class="about_us_content">
+        <div class="about_grid">
+          <div class="about_left">
+            <p class="sub-heading small">About Us</p>
+            <h2 class="main-heading">For Urban<br />Living.</h2>
+          </div>
+
+          <div class="about_right">
+            <p class="description">
+              We believe that good design should be easy to accept and
+              comfortable to enjoy. For this reason, we collaborate with the
+              best local designers to create furniture that is suitable for the
+              needs of urban life—furniture that is pleasant to look at,
+              reliable for the long term, but not difficult to deliver.
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-box">
+            <h3 class="num">900<sup>+</sup></h3>
+            <p class="numT">
+              Products that we have created<br />and sold on the market.
+            </p>
+          </div>
+          <div class="stat-box">
+            <h3 class="num">20K<sup>+</sup></h3>
+            <p class="numT">Happy and loyal customers<br />buy our products.</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="num">98<sup>%</sup></h3>
+            <p class="numT">
+              Customers who have purchased<br />will come back again.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- new collection section -->
+    <section class="new_collection">
+      <div class="carousel_wrapper">
+        <button class="carousel_nav prev" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="new_collection_container">
+          <div class="carousel_track">
+            <div class="new_collection_box">
+              <div class="new_collection_image">
+                <img src="resources/img/home_images/bedd.jpg" alt="" />
+              </div>
+              <div class="content">
+                <h3>Minimalist Upholstered Bed</h3>
+                <h4>
+                  A contemporary, low-profile platform bed featuring a clean,
+                  light beige or off-white tone
+                </h4>
+                <div class="price">$1000</div>
+              </div>
+            </div>
+
+            <!-- chair -->
+            <div class="new_collection_box">
+              <div class="new_collection_image">
+                <img src="resources/img/home_images/chairr.jpg" alt="" />
+              </div>
+              <div class="content">
+                <h3>Tufted Reading Chair</h3>
+                <h4>
+                  A comfortable, high-back armchair featuring button-tufting on
+                  the backrest, light-colored fabric
+                </h4>
+                <div class="price">$899</div>
+              </div>
+            </div>
+
+            <!-- dinner set -->
+            <div class="new_collection_box">
+              <div class="new_collection_image">
+                <img src="resources/img/home_images/dinnerset.jpg" alt="" />
+              </div>
+              <div class="content">
+                <h3>Minimalist Dinner Set</h3>
+                <h4>
+                  A large rectangular dining table with a substantial natural
+                  wood top paired with mid-century modern-style chairs
+                </h4>
+                <div class="price">$2800</div>
+              </div>
+            </div>
+
+            <!-- mirror -->
+            <div class="new_collection_box">
+              <div class="new_collection_image">
+                <img src="resources/img/home_images/mirrorrr.jpg" alt="" />
+              </div>
+              <div class="content">
+                <h3>Arch Floor Mirror</h3>
+                <h4>
+                  A tall, arched floor mirror with a thin black frame, used to
+                  create the illusion of space and reflect light.
+                </h4>
+                <div class="price">$499</div>
+              </div>
+            </div>
+
+            <!-- sofa -->
+            <div class="new_collection_box">
+              <div class="new_collection_image">
+                <img src="resources/img/home_images/sofaaa.jpg" alt="" />
+              </div>
+              <div class="content">
+                <h3>Mid-Century Sofa</h3>
+                <h4>
+                  A contemporary and cozy two-seater sofa upholstered in a
+                  light, neutral fabric
+                </h4>
+                <div class="price">$1500</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel_nav next" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--product section-->
+
+    <section class="product_section">
+      <nav class="navbar_product_section">
+        <div class="product_section_container">
+          <!-- big left -->
+          <a href="/living-products" class="product_section_box big">
+            <div class="image_wrap">
+              <img
+                src="resources/img/home_images/livingriin.jpg"
+                alt="Living Room"
+              />
+              <div class="overlay">
+                <h2>Living Room</h2>
+                <span class="btn">See Collection</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- right top -->
+          <a href="/bed-products" class="product_section_box small">
+            <div class="image_wrap">
+              <img src="resources/img/home_images/bedroom.jpg" alt="Bed Room" />
+              <div class="overlay">
+                <h3>Bed Room</h3>
+              </div>
+            </div>
+          </a>
+
+          <!-- right bottom -->
+          <a href="/dining-products" class="product_section_box small">
+            <div class="image_wrap">
+              <img
+                src="resources/img/home_images/dinnerroom.jpg"
+                alt="Dinner Room"
+              />
+              <div class="overlay">
+                <h3>Dinner Room</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </section>
+
+    <!--footer-->
 
     <footer class="footer">
-      <div class="container footer-container">
-        <div class="footer-col brand-col">
-          <h3>Lume.</h3>
-          <p>
-            Elevate your space with our curated collection of minimalist home
-            décor.
-          </p>
-
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit" class="btn-primary">Subscribe</button>
-          </form>
+      <div class="footer_container">
+        <div class="footer_column">
+          <h3>Service</h3>
+          <a href="#">Legal Notice</a>
+          <a href="#">Data Protection</a>
         </div>
 
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <ul>
-            <li><a href="#">Living Room</a></li>
-            <li><a href="#">Bedroom</a></li>
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Sale</a></li>
-          </ul>
+        <div class="footer_column">
+          <h3>Newsletter</h3>
+          <a href="#">Email</a>
+          <a href="#">Subscribe</a>
         </div>
 
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Shipping & Returns</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
+        <div class="footer_logo">
+          <img src="resources/img/home_images/logo_t.png" alt="Lume Logo" />
+        </div>
+
+        <div class="footer_column">
+          <h3>Connect</h3>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Contact</h3>
+          <p>12 B Street, Eastern<br />Alberta</p>
+          <a href="mailto:Global@Modulive.com">Global@Modulive.com</a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2025 Lume Home Décor. Designed for University Project.</p>
+      <div class="footer_bottom">
+        <p>© Copyright 2024. Modulive All Rights Reserved.</p>
+
+        <div class="footer_links">
+          <a href="#">Terms of service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
       </div>
     </footer>
-
-    <script>
-      const menuToggle = document.getElementById("mobile-menu");
-      const navMenu = document.querySelector(".nav-menu");
-
-      menuToggle.addEventListener("click", () => {
-        menuToggle.classList.toggle("is-active");
-        navMenu.classList.toggle("active");
-      });
-    </script>
     <script src="main.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/home.js"></script>
   </body>
 </html>
