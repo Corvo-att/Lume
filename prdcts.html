@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products</title>
+    <title>Lume | Products</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="resources/img/home_images/logo_b_t.png"
+    />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Lato:wght@300;400;700&display=swap"
@@ -39,10 +44,14 @@
                 <a href="/prdcts.html" class="navbar_links">Product</a>
               </li>
               <li class="navbar_home_item">
-                <a href="/NewCollection.html" class="navbar_links">Services</a>
+                <a href="#" class="navbar_links" style="cursor: default"
+                  >Services</a
+                >
               </li>
               <li class="navbar_home_item">
-                <a href="/aboutus.html" class="navbar_links">About Us</a>
+                <a href="index.html#about_us_section" class="navbar_links"
+                  >About Us</a
+                >
               </li>
             </ul>
           </div>
@@ -59,7 +68,7 @@
               </a>
             </button>
             <button class="icon-btn" aria-label="account">
-              <i class="fa-regular fa-user"></i>
+              <a href="login.html"><i class="fa-regular fa-user"></i></a>
             </button>
           </div>
 
@@ -78,42 +87,84 @@
     </header>
     <div class="container shop-layout">
       <aside class="filter-sidebar">
-        <h3 class="sidebar-title">Filter</h3>
-
-        <div class="filter-group">
-          <h4>By Categories</h4>
-          <label
-            ><input
-              type="checkbox"
-              class="category-filter"
-              value="Living Room"
-            />
-            Living Room</label
-          >
-          <label
-            ><input type="checkbox" class="category-filter" value="Bedroom" />
-            Bedroom</label
-          >
-          <label
-            ><input type="checkbox" class="category-filter" value="Dining" />
-            Dining</label
-          >
-          <label
-            ><input type="checkbox" class="category-filter" value="Lighting" />
-            Lighting</label
-          >
+        <div class="filter-header">
+          <h3 class="sidebar-title">
+            <i class="fa-solid fa-sliders"></i>
+            Filters
+          </h3>
+          <button class="clear-filters" id="clearFilters">
+            <i class="fa-solid fa-rotate-right"></i>
+            Clear All
+          </button>
         </div>
 
-        <div class="filter-group">
-          <h4>Price</h4>
-          <input
-            type="range"
-            min="100"
-            max="1500"
-            value="1500"
-            id="priceFilter"
-          />
-          <p>Max Price: $<span id="priceValue">1500</span></p>
+        <div class="filter-section">
+          <div class="filter-group">
+            <h4 class="filter-title">
+              <i class="fa-solid fa-layer-group"></i>
+              Categories
+            </h4>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  class="category-filter"
+                  value="Living Room"
+                />
+                <span class="checkmark"></span>
+                <span class="filter-label">Living Room</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  class="category-filter"
+                  value="Bedroom"
+                />
+                <span class="checkmark"></span>
+                <span class="filter-label">Bedroom</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="category-filter" value="Dining" />
+                <span class="checkmark"></span>
+                <span class="filter-label">Dining</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  class="category-filter"
+                  value="Lighting"
+                />
+                <span class="checkmark"></span>
+                <span class="filter-label">Lighting</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-title">
+              <i class="fa-solid fa-dollar-sign"></i>
+              Price Range
+            </h4>
+            <div class="price-filter-wrapper">
+              <div class="price-range-container">
+                <input
+                  type="range"
+                  min="100"
+                  max="1500"
+                  value="1500"
+                  id="priceFilter"
+                  class="price-slider"
+                />
+                <div class="price-track"></div>
+              </div>
+              <div class="price-display">
+                <span class="price-label">Maximum:</span>
+                <span class="price-value"
+                  >$<span id="priceValue">1500</span></span
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </aside>
 

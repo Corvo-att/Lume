@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lume | Register</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="resources/img/home_images/logo_b_t.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="home_header">
+      <nav class="nav_home">
+        <div class="home_navbar_container">
+          <!-- logo section -->
+          <div class="logo">
+            <a href="/index.html">
+              <img src="resources/img/home_images/logo_t.png" alt="Lume logo" />
+            </a>
+          </div>
+
+          <!-- center white menu tab -->
+          <div class="nav_menu_tab">
+            <ul class="navbar_home_menu">
+              <li class="navbar_home_item">
+                <a href="/" class="navbar_links">Home</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/prdcts.html" class="navbar_links">Product</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="#" class="navbar_links" style="cursor: default"
+                  >Services</a
+                >
+              </li>
+              <li class="navbar_home_item">
+                <a href="index.html#about_us_section" class="navbar_links"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- icons section -->
+          <div class="home_icons_container" aria-hidden="false">
+            <button class="icon-btn" aria-label="wishlist">
+              <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            </button>
+            <button class="icon-btn cart-icon-btn" aria-label="cart">
+              <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-counter hidden" id="cart-counter">0</span>
+              </a>
+            </button>
+            <button class="icon-btn" aria-label="account">
+              <a href="login.html"><i class="fa-regular fa-user"></i></a>
+            </button>
+          </div>
+
+          <!-- hamburger (mobile) -->
+          <button
+            class="navbar_toggle"
+            id="mobile-menu"
+            aria-label="toggle menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="auth-container">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h2 class="auth-title">Create a new account</h2>
+          <p class="auth-subtitle">
+            Or
+            <a href="login.html" class="auth-link"
+              >sign in to your existing account</a
+            >
+          </p>
+        </div>
+
+        <div class="auth-form-wrapper">
+          <form class="auth-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name" class="form-label">Full name</label>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <i data-feather="user"></i>
+                </div>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  class="form-input"
+                  placeholder="Enter your full name"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email address</label>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <i data-feather="mail"></i>
+                </div>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  class="form-input"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <i data-feather="lock"></i>
+                </div>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  required
+                  class="form-input"
+                  placeholder="Create a password"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm-password" class="form-label"
+                >Confirm Password</label
+              >
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <i data-feather="lock"></i>
+                </div>
+                <input
+                  id="confirm-password"
+                  name="confirm-password"
+                  type="password"
+                  autocomplete="new-password"
+                  required
+                  class="form-input"
+                  placeholder="Confirm your password"
+                />
+              </div>
+            </div>
+
+            <div class="checkbox-wrapper terms-checkbox">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                class="form-checkbox"
+                required
+              />
+              <label for="terms" class="checkbox-label">
+                I agree to the
+                <a href="#" class="auth-link">Terms of Service</a>
+                and
+                <a href="#" class="auth-link">Privacy Policy</a>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn-primary">Create account</button>
+            </div>
+          </form>
+
+          <div class="divider-section">
+            <div class="divider">
+              <span class="divider-text">Or sign up with</span>
+            </div>
+
+            <div class="social-buttons">
+              <a href="#" class="social-btn">
+                <i data-feather="facebook"></i>
+              </a>
+              <a href="#" class="social-btn">
+                <i data-feather="instagram"></i>
+              </a>
+              <a href="#" class="social-btn">
+                <i data-feather="github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_column">
+          <h3>Service</h3>
+          <a href="#">Legal Notice</a>
+          <a href="#">Data Protection</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Newsletter</h3>
+          <a href="#">Email</a>
+          <a href="#">Subscribe</a>
+        </div>
+
+        <div class="footer_logo">
+          <img src="resources/img/home_images/logo_t.png" alt="Lume Logo" />
+        </div>
+
+        <div class="footer_column">
+          <h3>Connect</h3>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Contact</h3>
+          <p>12 B Street, Eastern<br />Alberta</p>
+          <a href="mailto:Global@Modulive.com">Global@Modulive.com</a>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <p>© Copyright 2024. Modulive All Rights Reserved.</p>
+
+        <div class="footer_links">
+          <a href="#">Terms of service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+    </script>
+    <script src="main.js"></script>
+    <script src="scripts/auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Review | Lume</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="resources/img/home_images/logo_b_t.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles/checkout.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="home_header">
+      <nav class="nav_home">
+        <div class="home_navbar_container">
+          <!-- logo section -->
+          <div class="logo">
+            <a href="/index.html">
+              <img src="resources/img/home_images/logo_t.png" alt="Lume logo" />
+            </a>
+          </div>
+
+          <!-- center white menu tab -->
+          <div class="nav_menu_tab">
+            <ul class="navbar_home_menu">
+              <li class="navbar_home_item">
+                <a href="/" class="navbar_links">Home</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="/prdcts.html" class="navbar_links">Product</a>
+              </li>
+              <li class="navbar_home_item">
+                <a href="#" class="navbar_links" style="cursor: default"
+                  >Services</a
+                >
+              </li>
+              <li class="navbar_home_item">
+                <a href="index.html#about_us_section" class="navbar_links"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- icons section -->
+          <div class="home_icons_container" aria-hidden="false">
+            <button class="icon-btn" aria-label="wishlist">
+              <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            </button>
+            <button class="icon-btn cart-icon-btn" aria-label="cart">
+              <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-counter hidden" id="cart-counter">0</span>
+              </a>
+            </button>
+            <button class="icon-btn" aria-label="account">
+              <a href="login.html"><i class="fa-regular fa-user"></i></a>
+            </button>
+          </div>
+
+          <!-- hamburger (mobile) -->
+          <button
+            class="navbar_toggle"
+            id="mobile-menu"
+            aria-label="toggle menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> > <a href="prdcts.html">Shop</a> >
+        <span>Checkout</span>
+      </div>
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>Checkout</h1>
+      </div>
+
+      <!-- Progress Indicator -->
+      <div class="progress-container">
+        <div class="progress-steps">
+          <div class="progress-bar" id="progressBar"></div>
+
+          <div class="step completed" id="step1">
+            <div class="step-circle">1</div>
+            <div class="step-label">Shipping</div>
+          </div>
+
+          <div class="step completed" id="step2">
+            <div class="step-circle">2</div>
+            <div class="step-label">Payment</div>
+          </div>
+
+          <div class="step active" id="step3">
+            <div class="step-circle">3</div>
+            <div class="step-label">Review</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Grid -->
+      <div class="grid">
+        <!-- Review Form -->
+        <div class="step-form active" id="step3-form">
+          <h2>Review Your Order</h2>
+          <div class="review-summary">
+            <h3>Shipping Information</h3>
+            <p id="review-name">Name: <span></span></p>
+            <p id="review-email">Email: <span></span></p>
+            <p id="review-phone">Phone: <span></span></p>
+            <p id="review-address">Address: <span></span></p>
+            <p id="review-city">City: <span></span></p>
+            <p id="review-zip">ZIP Code: <span></span></p>
+            <p id="review-delivery">Delivery Date: <span></span></p>
+
+            <h3>Payment Information</h3>
+            <p id="review-card">Card: **** **** **** <span></span></p>
+            <p id="review-expiry">Expires: <span></span></p>
+          </div>
+          <div class="button-group">
+            <a href="payment.html" class="secondary">Back</a>
+            <button type="button" id="place-order">Place Order</button>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="summary-section">
+          <h2>Order Summary</h2>
+
+          <div class="summary-items-container">
+            <div class="summary-item">
+              <img src="resources/img/lusso-sofa.jpg" alt="Lusso Cloud Sofa" />
+              <div class="summary-item-details">
+                <h3>Lusso Cloud Sofa</h3>
+                <p>Qty: 1</p>
+              </div>
+              <div class="price">$1,299</div>
+            </div>
+
+            <div class="summary-item">
+              <img
+                src="resources/img/eames-chair.jpg"
+                alt="Eames Style Lounge Chair"
+              />
+              <div class="summary-item-details">
+                <h3>Eames Style Lounge Chair</h3>
+                <p>Qty: 1</p>
+              </div>
+              <div class="price">$850</div>
+            </div>
+
+            <div class="summary-item">
+              <img
+                src="resources/img/marble-table.jpg"
+                alt="Marble Top Dining Table"
+              />
+              <div class="summary-item-details">
+                <h3>Marble Top Dining Table</h3>
+                <p>Qty: 1</p>
+              </div>
+              <div class="price">$899</div>
+            </div>
+
+            <div class="summary-item">
+              <img src="resources/img/arco-lamp.jpg" alt="Arco Floor Lamp" />
+              <div class="summary-item-details">
+                <h3>Arco Floor Lamp</h3>
+                <p>Qty: 1</p>
+              </div>
+              <div class="price">$299</div>
+            </div>
+          </div>
+
+          <div class="total">
+            <p>Subtotal: <span>$3,347</span></p>
+            <p>Shipping: <span>$50</span></p>
+            <p>
+              <strong>Total: <span>$3,397</span></strong>
+            </p>
+          </div>
+
+          <div class="free-shipping-box">
+            🚚 Free shipping on orders over $500
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_column">
+          <h3>Service</h3>
+          <a href="#">Legal Notice</a>
+          <a href="#">Data Protection</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Newsletter</h3>
+          <a href="#">Email</a>
+          <a href="#">Subscribe</a>
+        </div>
+
+        <div class="footer_logo">
+          <img src="resources/img/home_images/logo_t.png" alt="Lume Logo" />
+        </div>
+
+        <div class="footer_column">
+          <h3>Connect</h3>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+
+        <div class="footer_column">
+          <h3>Contact</h3>
+          <p>12 B Street, Eastern<br />Alberta</p>
+          <a href="mailto:Global@Modulive.com">Global@Modulive.com</a>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <p>© Copyright 2024. Modulive All Rights Reserved.</p>
+
+        <div class="footer_links">
+          <a href="#">Terms of service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="scripts/checkout.js"></script>
+  </body>
+</html>

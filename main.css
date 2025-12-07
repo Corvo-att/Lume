@@ -281,11 +281,6 @@ a {
   transition: all 0.25s ease;
 }
 
-/* White bars for home page only */
-body:not(.products_page):not(.product-detail-page):not(.wishlist-page) .bar {
-  background: var(--white);
-}
-
 /* Mobile menu */
 .nav_menu_tab.mobile-active {
   display: flex;

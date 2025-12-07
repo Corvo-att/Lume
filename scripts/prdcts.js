@@ -3,11 +3,32 @@ const categoryFilters = document.querySelectorAll('.category-filter');
 const priceFilter = document.getElementById('priceFilter');
 const priceValue = document.getElementById('priceValue');
 const products = document.querySelectorAll('.product-card');
+const clearFiltersBtn = document.getElementById('clearFilters');
 
+// Update price display and gradient
 priceFilter.addEventListener('input', () => {
     priceValue.textContent = priceFilter.value;
+    updatePriceSliderGradient();
     filterProducts();
 });
+
+// Clear all filters
+clearFiltersBtn.addEventListener('click', () => {
+    categoryFilters.forEach(filter => filter.checked = false);
+    priceFilter.value = 1500;
+    priceValue.textContent = '1500';
+    updatePriceSliderGradient();
+    filterProducts();
+});
+
+// Update price slider gradient based on value
+function updatePriceSliderGradient() {
+    const value = priceFilter.value;
+    const min = priceFilter.min;
+    const max = priceFilter.max;
+    const percentage = ((value - min) / (max - min)) * 100;
+    priceFilter.style.background = `linear-gradient(to right, var(--accent-color) 0%, var(--accent-color) ${percentage}%, #e0e0e0 ${percentage}%, #e0e0e0 100%)`;
+}
 
 categoryFilters.forEach(filter => {
     filter.addEventListener('change', filterProducts);
@@ -81,6 +102,9 @@ window.addEventListener("DOMContentLoaded", () => {
             btn.classList.add("fa-solid");
         }
     });
+    
+    // Initialize price slider gradient
+    updatePriceSliderGradient();
     
     // Add click handlers to navigate to product detail page
     addProductClickHandlers();

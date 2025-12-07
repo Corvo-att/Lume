@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize cart counter on all pages
   initializeCartCounter();
   
+  // Update user icon link based on login status
+  updateUserIconLink();
+  
   if (mobileMenuBtn && navMenu) {
     mobileMenuBtn.addEventListener("click", function() {
       navMenu.classList.toggle("mobile-active");
@@ -105,3 +108,25 @@ function updateCartCounterDisplay() {
 
 // Make cart counter update globally available
 window.updateCartCounter = updateCartCounterDisplay;
+
+// User Icon Link Update Function
+function updateUserIconLink() {
+  const currentUser = localStorage.getItem('currentUser');
+  const userIconButtons = document.querySelectorAll('.icon-btn[aria-label="account"]');
+  
+  userIconButtons.forEach(button => {
+    const link = button.querySelector('a');
+    if (link) {
+      if (currentUser) {
+        // User is logged in, link to profile
+        link.href = 'profile.html';
+      } else {
+        // User is not logged in, link to login
+        link.href = 'login.html';
+      }
+    }
+  });
+}
+
+// Make it globally available
+window.updateUserIconLink = updateUserIconLink;

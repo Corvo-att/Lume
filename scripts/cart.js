@@ -233,10 +233,205 @@ if (checkoutBtn) {
       return;
     }
     
-    alert('Checkout functionality coming soon! Total: $' + calculateTotals().total);
-    // Implement actual checkout process here
+    // Check if user is logged in
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+      // Show login modal/popup
+      showLoginModal();
+      return;
+    }
+    
+    // Redirect to shipping page (first step of checkout)
+    window.location.href = 'shipping.html';
   });
 }
+
+// Show login modal for checkout
+function showLoginModal() {
+  // Create modal overlay
+  const modalOverlay = document.createElement('div');
+  modalOverlay.className = 'login-modal-overlay';
+  modalOverlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+  `;
+  
+  // Create modal content
+  const modalContent = document.createElement('div');
+  modalContent.className = 'login-modal-content';
+  modalContent.style.cssText = `
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+    position: relative;
+  `;
+  
+  modalContent.innerHTML = `
+    <div style="margin-bottom: 1.5rem;">
+      <i class="fas fa-user-lock" style="font-size: 4rem; color: #8B7355; margin-bottom: 1rem;"></i>
+      <h2 style="font-family: 'Playfair Display', serif; color: #2c2c2c; margin-bottom: 0.5rem; font-size: 1.8rem;">Login Required</h2>
+      <p style="color: #666; font-size: 1rem; line-height: 1.6;">Please log in to your account to proceed with checkout. If you don't have an account, you can create one.</p>
+    </div>
+    <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center;">
+      <button id="modal-login-btn" style="
+        background: #8B7355;
+        color: white;
+        border: none;
+        padding: 0.875rem 2rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-width: 140px;
+      ">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <button id="modal-register-btn" style="
+        background: white;
+        color: #8B7355;
+        border: 2px solid #8B7355;
+        padding: 0.875rem 2rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-width: 140px;
+      ">
+        <i class="fas fa-user-plus"></i> Register
+      </button>
+    </div>
+    <button id="modal-close-btn" style="
+      background: transparent;
+      border: none;
+      color: #999;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-decoration: underline;
+      padding: 0.5rem;
+    ">Continue Shopping</button>
+  `;
+  
+  modalOverlay.appendChild(modalContent);
+  document.body.appendChild(modalOverlay);
+  
+  // Prevent body scroll
+  document.body.style.overflow = 'hidden';
+  
+  // Add hover effects
+  const loginBtn = modalContent.querySelector('#modal-login-btn');
+  const registerBtn = modalContent.querySelector('#modal-register-btn');
+  
+  loginBtn.addEventListener('mouseenter', function() {
+    this.style.background = '#6d5a42';
+    this.style.transform = 'translateY(-2px)';
+    this.style.boxShadow = '0 4px 12px rgba(139, 115, 85, 0.3)';
+  });
+  loginBtn.addEventListener('mouseleave', function() {
+    this.style.background = '#8B7355';
+    this.style.transform = 'translateY(0)';
+    this.style.boxShadow = 'none';
+  });
+  
+  registerBtn.addEventListener('mouseenter', function() {
+    this.style.background = '#f8f5f2';
+    this.style.transform = 'translateY(-2px)';
+    this.style.boxShadow = '0 4px 12px rgba(139, 115, 85, 0.2)';
+  });
+  registerBtn.addEventListener('mouseleave', function() {
+    this.style.background = 'white';
+    this.style.transform = 'translateY(0)';
+    this.style.boxShadow = 'none';
+  });
+  
+  // Event listeners
+  loginBtn.addEventListener('click', function() {
+    window.location.href = 'login.html';
+  });
+  
+  registerBtn.addEventListener('click', function() {
+    window.location.href = 'register.html';
+  });
+  
+  modalContent.querySelector('#modal-close-btn').addEventListener('click', function() {
+    closeLoginModal();
+  });
+  
+  // Close on overlay click
+  modalOverlay.addEventListener('click', function(e) {
+    if (e.target === modalOverlay) {
+      closeLoginModal();
+    }
+  });
+  
+  // Close on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLoginModal();
+    }
+  });
+  
+  function closeLoginModal() {
+    modalOverlay.style.animation = 'fadeOut 0.3s ease';
+    modalContent.style.animation = 'slideDown 0.3s ease';
+    setTimeout(() => {
+      modalOverlay.remove();
+      document.body.style.overflow = '';
+    }, 300);
+  }
+}
+
+// Add CSS animations
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideDown {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+`;
+document.head.appendChild(style);
 
 // Make functions globally available
 window.addToCart = addToCart;
