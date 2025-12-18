@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Add CSS animations
+//  CSS animations
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideDown {
